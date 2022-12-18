@@ -49,20 +49,19 @@ class LoginController extends Controller
           'email'=>'required|email',
           'password'=> 'required',
         );
-      
         $validator=Validator::make($data,$rule);
         if($validator->fails()){
       
         }else{
           if(Auth::attempt($data)){
-              $uid =  Auth::User()->id;
+              $uid = Auth::User()->id;
 
               $role= DB::table('role_user')
               ->where('role_user.user_id','=',$uid)
               ->join('roles', 'role_user.role_id', '=', 'roles.id')
               ->select('roles.name as name')
               ->first();
-
+            
             if ($role->name=='SUPER_ADMIN') {
                 return redirect('admin-dashboard');
             } elseif($role->name=='ADMIN') {
@@ -70,8 +69,10 @@ class LoginController extends Controller
             } elseif($role->name=='TEACHER') {
                 return redirect('teacher-dashboard');
             } elseif($role->name=='STUDENT') {
-                return redirect('student-dashboard');
-            } 
+                return redirect('student-gifts');
+            }
+          } else {
+            return back()->with('message', ['text'=>'Invalid Credentials!','type'=>'danger']);
           }
         }  
     }

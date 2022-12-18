@@ -13,7 +13,7 @@
                 <form action="be_forms_editors.html" method="post" onsubmit="return false;">
                     <div class="form-group row">
                         <div class="col-12">
-                            <textarea id="js-ckeditor" name="ckeditor"></textarea>
+                            <textarea class="editor1" id="ckeditor1"></textarea>
                         </div>
                     </div>
                 </form>
@@ -26,7 +26,7 @@
                 <form action="be_forms_editors.html" method="post" onsubmit="return false;">
                     <div class="form-group row">
                         <div class="col-12">
-                            <textarea id="js-ckeditor" name="ckeditor"></textarea>
+                            <textarea class="editor1" id="ckeditor2"></textarea>
                         </div>
                     </div>
                 </form>
@@ -47,5 +47,9 @@
 @endsection
 @section('custom-script')
     <script src="{{asset('assets/js/plugins/ckeditor/ckeditor.js')}}"></script>
-    <script>jQuery(function(){ Codebase.helpers(['ckeditor']); });</script>
+    <script>
+        $('.editor1').each(function () {
+            CKEDITOR.replace($(this).prop('id'));
+        });
+</script>
 @endsection

@@ -32,7 +32,7 @@
                             <i class="si si-users fa-3x text-body-bg-dark"></i>
                         </div>
                         <div class="font-size-h3 font-w600" data-toggle="countTo" data-speed="1000" data-to="15">0</div>
-                        <div class="font-size-sm font-w600 text-uppercase text-muted">Total Admin</div>
+                        <div class="font-size-sm font-w600 text-uppercase text-muted">Total Admins</div>
                     </div>
                 </a>
             </div>

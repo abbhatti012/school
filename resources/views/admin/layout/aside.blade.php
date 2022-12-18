@@ -74,14 +74,20 @@
                         <li><a class="<?php if($route == 'teachers'){echo 'active';} ?>" href="{{ route('teachers') }}"><i class="fa fa-user"></i><span class="sidebar-mini-hide">Teachers</span></a></li>
                         <li><a class="<?php if($route == 'categories'){echo 'active';} ?>" href="{{ route('categories') }}"><i class="fa fa-list-alt"></i><span class="sidebar-mini-hide">Point Category</span></a></li>
                     @endif
+                    @if($role == 'SUPER_ADMIN')
+                    <li><a class="<?php if($route == 'admins'){echo 'active';} ?>" href="{{ route('admins') }}"><i class="fa fa-users"></i><span class="sidebar-mini-hide">Admins</span></a></li>
+                    @endif
                     @if($role == 'TEACHER')
-                        <li><a class="<?php if($route == 'teacher-dashboard'){echo 'active';} ?>" href="{{ route('teacher-dashboard') }}"><i class="fa fa-dashboard"></i><span class="sidebar-mini-hide">Classrooms</span></a></li>
-                        @endif
+                    <li><a class="<?php if($route == 'teacher-dashboard'){echo 'active';} ?>" href="{{ route('teacher-dashboard') }}"><i class="fa fa-dashboard"></i><span class="sidebar-mini-hide">Classrooms</span></a></li>
+                    @endif
                     <li><a class="<?php if($route == 'students'){echo 'active';} ?>" href="{{ route('students') }}"><i class="fa fa-user"></i><span class="sidebar-mini-hide">Students</span></a></li>
                     <li><a class="<?php if($route == 'classes'){echo 'active';} ?>" href="{{ route('classes') }}"><i class="fa fa-bars"></i><span class="sidebar-mini-hide">Classes</span></a></li>
-                    <li><a class="<?php if($route == 'point-value'){echo 'active';} ?>" href="{{ route('point-value') }}"><i class="fa fa-dot-circle-o"></i><span class="sidebar-mini-hide">Point Value</span></a></li>
                     <li><a class="<?php if($route == 'gifts'){echo 'active';} ?>" href="{{ route('gifts') }}"><i class="fa fa-gift"></i><span class="sidebar-mini-hide">Store / Gifts</span></a></li>
-                @endif
+                    @endif
+                    @if($role == 'STUDENT')
+                        <li><a class="<?php if($route == 'student-dashboard'){echo 'active';} ?>" href="{{ route('student-dashboard') }}"><i class="fa fa-bars"></i><span class="sidebar-mini-hide">Store</span></a></li>
+                    @endif
+                    <li><a class="<?php if($route == 'point-value'){echo 'active';} ?>" href="{{ route('point-value') }}"><i class="fa fa-dot-circle-o"></i><span class="sidebar-mini-hide">Point Value</span></a></li>
             </ul>
         </div>
     </div>

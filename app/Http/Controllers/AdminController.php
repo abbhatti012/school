@@ -15,6 +15,12 @@ class AdminController extends Controller
     public function add_teacher(){
         return view('admin.add-teacher');
     }
+    public function admins(){
+        return view('admin.admins');
+    }
+    public function add_admin(){
+        return view('admin.add-admin');
+    }
     public function students(){
         return view('admin.students');
     }
